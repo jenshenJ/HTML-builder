@@ -1,10 +1,11 @@
 const fs = require('fs');
+const path = require('path');
 const { exit } = require('process');
 
 
 
 const {stdin} = process;
-const output = fs.createWriteStream('02-write-file/output.txt', 'utf-8');
+const output = fs.createWriteStream(path.join('02-write-file', 'output.txt'), 'utf-8');
 console.log('Введите текст для записи в файл:');
 
 stdin.on('data', (data) => {
